@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" ?>
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul"
+    xmlns:h="http://www.w3.org/1999/xhtml"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+
+    <window>
+        <borderlayout height="650px">
+			<north size="150px"  style="background:white">
+				<hbox align="center">
+            <image src="${z.resource(dir:'images', file:'logo.jpg')}"/>
+			<label style="font-size:40px;color:blue">Computer Engineering ,Suranaree University of Technology</label>
+        </hbox>
+			</north>
+			<south size="30px">
+                <div style="background:#FFFF99;color:gray;">
+                <image src="${z.resource(dir:'images', file:'icon.png')}"/>
+                    ©2012 Sabay Barbecue Plaza ::By สมาคมเนื้อย่างแห่งประเทศไทย(Tel:: 08X-XXXXXXXX)
+                </div>
+            </south>
+			<center style="background:#F5F5F5">
+				Comming Soon
+				So Sad
+			</center>
+			<west size="50%" style="background:#F5F5F5">
+				<vbox>
+					<separator/>
+						<a href="indexmember.zul"><image src="${z.resource(dir:'images', file:'ms.png')}"/></a>
+					<separator/>
+						<a href="orderfood.zul"><image src="${z.resource(dir:'images', file:'fos.png')}"/></a>
+					<separator/>
+						<a href="indexpromotion.zul"><image src="${z.resource(dir:'images', file:'pros.png')}"/></a>
+					
+						<a href="indextable.zul"><image src="${z.resource(dir:'images', file:'rts.png')}"/></a>
+					
+						<a href="login.zul"><image src="${z.resource(dir:'images', file:'ems.png')}"/></a>
+					<separator/>
+						<a href="login.zul"><image src="${z.resource(dir:'images', file:'ws.png')}"/></a>
+					<separator/>
+				</vbox>	
+			</west>
+		</borderlayout>
+    </window>
+</zk>

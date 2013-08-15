@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" ?>
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul"
+    xmlns:h="http://www.w3.org/1999/xhtml"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+
+    <window apply="sabaybarbecue.IndexwarehouseComposer">
+
+        <style>
+			.style{
+				text-decoration: line-through;
+			}
+		</style>
+		
+		<separator/>
+
+        <borderlayout height="650px">
+            <north size="80px">
+                <span>
+                    <hbox>
+                        <image src="${z.resource(dir:'images', file:'demo.png')}"/>
+                        <vbox>
+							<a href="indexwarehouse.zul" label="WareHouse" style="color:gray;font-size:40px" tooltip="any"/>
+                            <label value="Computer Engineering, Suranaree University Of Technology"/>
+                            <popup id="any" width="300px">
+                                <vbox>
+                                    <label value="ระบบคลังสินค้า เบิก จ่าย"/>
+                                    <label value="sut computer"/>
+                                </vbox>
+                            </popup>
+                        </vbox>
+                    </hbox>
+                </span>
+            </north>
+
+            <west title="ListOrder(All)" size="900px">
+			
+			
+			
+                <div>
+                    <listbox id="listboxID" height="510px">
+                        <listhead>
+                            <listheader label="listOrder" sort="auto"/>
+                            <!-- <listheader label="Status" sort="auto"/> -->
+                            <listheader label="Amount" sort="auto"/>
+							<listheader label="Date_Expire" sort="auto"/>
+							<listheader label="Price" sort="auto"/>
+                        </listhead>
+						
+					   <!-- <listitem>
+                            <listcell label="Meat"/>
+                            <listcell label="On"/>
+                            <listcell label="11"/>
+                        </listitem> -->
+                    </listbox>
+                </div>
+            </west>
+
+            <center title="Properties">
+                <div>
+				
+				<groupbox width="100%">
+                    <caption label="แก้ไขรายการอาหาร"/>
+                    <separator/>
+                    <span>
+                        <label value="รายการ:"/> 
+                        <combobox id="cbBoxID">
+                            <!--
+							<comboitem label="หมู"/>
+                            <comboitem label="เห็ด"/>
+                            <comboitem label="เป็ด"/>
+                            <comboitem label="ไก่"/>
+							-->
+						</combobox>จำนวน:
+						<textbox id="txtDecrese"/>
+                        <separator/>
+						<button label="เพิ่มจำนวน" id="btnAddNumber"/>
+						<button label="ลดจำนวน" id="btnUpdate"/>
+						<button label="ลดรายการ" id="btnDelete"/>
+                    </span>
+                </groupbox>
+			
+				
+                <groupbox width="100%">
+                    <caption label="เพิ่มรายการอาหาร"/>
+                    <separator/>
+                    <span>
+                        <label value="ชื่ออาหาร:"/><textbox id="txtAddFoodName"/> <separator/>
+						<label value="วันหมดอายุ:"/> <textbox id="txtAddExpire"/> <separator/>
+						<label value="จำนวน:"/> <textbox id="txtAddNumber"/> <separator/>
+						<label value="ซื้อโดย:"/> <textbox id="txtAddBy"/> <separator/>
+						<label value="ราคา:"/> <textbox id="txtAddPrice"/> <separator/>
+						
+              
+						<button id="btnAddTask">เพิ่มข้อมูล</button>
+                    </span>
+
+                </groupbox>
+
+                <separator/>
+                <separator/>
+
+				<groupbox width="100%">
+					<caption label="ผู้ใช้"/>
+					<separator/>
+					<span>
+						<!-- 
+						<label value="ชื่อผู้ใช้:"/><textbox id="txtAddName"/> <separator/>
+						<label value="Username:"/> <textbox id="txtAddUsername"/> <separator/>
+						<label value="ที่อยู่:"/> <textbox id="txtAddAddress"/> <separator/>
+						<label value="e-mail:"/> <textbox id="txtAddEmail"/>
+						<separator/>
+						-->
+						
+						<vbox>
+							<button id="btnLogout">ออกจากระบบ</button><separator/>
+							<button id="btnRefresh">Refresh</button><separator/>
+						</vbox>
+					</span>
+					<vbox id="show23">
+					</vbox>
+				</groupbox>
+                </div>
+            </center>
+
+            <south size="30px">
+                <div align="right">
+                    <a href="index.zul" label="หน้าหลัก" style="font-size:12px" />
+                    <label value=" | "/>
+                    <a href="indexmember.zul" label="ระบบสมาชิก" style="font-size:12px" />       
+                    <label value=" | "/>             
+                    <a href="indexemployee.zul" label="ระบบพนักงาน" style="font-size:12px" />  
+                    <label value=" | "/>               
+                    <a href="indextable.zul" label="ระบบจองโต๊ะ" style="font-size:12px" />
+                    <label value=" | "/>
+                    <a href="indexpromotion.zul" label="ระบบโปรโมชั่น" style="font-size:12px" />
+                    <label value=" | "/>
+                    <a href="orderfood.zul" label="ระบบสั่งอาหารออนไลน์" style="font-size:12px" />
+                </div>
+
+            </south>
+    
+        </borderlayout>
+        
+    </window>
+
+</zk>

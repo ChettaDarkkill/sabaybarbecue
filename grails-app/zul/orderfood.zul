@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" ?>
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul"
+    xmlns:h="http://www.w3.org/1999/xhtml"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+
+    <window apply="sabaybarbecue.OrderfoodComposer">
+		
+        <hbox align="center">
+			
+			<html>
+			<BODY BGCOLOR="#CFCFCF"> </BODY>
+			</html>
+			
+			<vbox align="left">
+			<image src="${z.resource(dir:'images', file:'demo.png')}"/>
+			<separator/>
+					<a href="index.zul" label="หน้าหลัก"/>
+			
+			<hbox>
+			
+			<panel height="425px" width="1200px" style="margin-bottom:10px" title="Menu" border="normal" maximizable="true" collapsible="true">
+			<panelchildren>
+			<separator/>
+
+			<hbox>
+			<separator/>
+			<vbox align="center">
+			<image src="${z.resource(dir:'images', file:'f1.jpg')}" tooltip="picone"/>
+			<popup id="picone" width="300px">
+    			<vbox>
+       				 รายละเอียด.
+        			<label value="ปราหมึกกรอบ เนื้อหมู เนื้อวัว เนื้อไก่ กุ้งพันปูอัด เกี๊ยวกุ้งสด หมูสามอย่าง หมูสไลค์ หอยนางรม เนื้อปลาสด หมูนุ่ม ไข่ไก่สด สาหร่ายทรงเครื่อง วุ้นเส้น ลูกชิ้น เต้าหู ตับหมูสด"/>
+   				</vbox>
+			</popup>
+			<label value="ชุดอิ่มอร่อย"/>
+			<label value="ราคา: 999 บาท"/>
+			<button id="add" label="สั่งซื้อ"/>
+			</vbox>
+			<separator/>
+			
+			<vbox align="center">
+			<image src="${z.resource(dir:'images', file:'f3.jpg')}" tooltip="pictwo"/>
+			<popup id="pictwo" width="300px">
+    			<vbox>
+       				 รายละเอียด.
+        			<label value="เมนูสำหรับลูกค้าที่ต้องการอิ่มอย่างประหยัด ซาลาเปา ขนมจีบ ก๋วยเตี๋ยวหลอด ลูกชิ้น ปอเปี๊ยะ เผือกทอด 	   หอยจ๊อ ฮะเก๋า ปลาม้วน"/>
+   				</vbox>
+			</popup>
+			<label value="ชุดพอเพียง"/>
+			<label value="ราคา: 599 บาท"/>
+			<button id="add2" label="สั่งซื้อ"/>
+			</vbox>
+			<separator/>
+			
+			<vbox align="center">
+			<image src="${z.resource(dir:'images', file:'f7.jpg')}" tooltip="picthree"/>
+			<popup id="picthree" width="300px">
+    			<vbox>
+       				 รายละเอียด.
+        			 <label value="ผักและเห็ดนาๆชนิด สำหรับคนที่รักสุขภาพต้องเมนนี้เท่านั้น"/>  
+   				</vbox>
+			</popup>
+			<label value="ชุดเพื่อสุขภาพ"/>
+			<label value="ราคา:  799 บาท"/>
+			<button id="add3" label="สั่งซื้อ"/>
+			</vbox>
+			<separator/>
+			
+			<vbox align="center">
+			<image src="${z.resource(dir:'images', file:'f6.jpg')}" tooltip="picfour"/>
+			<popup id="picfour" width="300px">
+    			<vbox>
+       				 รายละเอียด.
+        			<label value="ปลา ปลาหมึก กุ้ง เกี๊ยว เนื้อหมู เนื้อไก่ เนื้อวัว สาหร่าย เต้าหู้"/>
+   				</vbox>
+			</popup>
+			<label value="ชุดเนื้อสุดอลังการ"/>
+			<label value="ราคา: 1696 บาท"/>
+			<button id="add4" label="สั่งซื้อ"/>
+			</vbox>
+			<separator/>			
+
+			<vbox>
+			<panel height="115px" width="300px" style="margin-bottom:10px" title="สมาชิก" border="normal" maximizable="true" collapsible="true">
+				<panelchildren>
+					<vbox>
+						<hbox>
+					<label value="username: "/>
+					<textbox id="user"/>
+						</hbox>
+						<hbox>
+					<label value="password: "/>
+					<textbox id="password" type="password"/>
+						</hbox>
+					<button id="login" label="Login"/>
+					</vbox>
+				</panelchildren>
+			</panel>
+
+			
+
+			<panel height="250px" width="300px" style="margin-bottom:10px" title="ใส่ที่อยู่เพื่อจัดส่ง" border="normal" maximizable="true" collapsible="true">
+			<panelchildren>
+			<vbox>
+			<hbox><label value="ชื่อ : "/><textbox id="name" width="200px"/></hbox>
+			<hbox><label value="ที่อยู่จัดส่ง : "/><textbox id="sendaddress" rows="5" cols="30"></textbox></hbox>
+			<hbox><label value="โทร(มือถือ) : "/><textbox id="tel" width="200px"/></hbox>
+			<hbox><label value="จังหวัด : "/><combobox  id="province" ><comboitem label="นครราชสีมา"/></combobox></hbox>
+			<hbox><label value="อีเมล์ : "/><textbox id="email" width="200px"/></hbox>
+			<button id="send" label="บันทึกข้อมูล"/>
+			</vbox>	
+			
+			</panelchildren>
+			</panel>
+			</vbox>
+
+			<panel height="380px" width="150px" style="margin-bottom:10px" title="รายการอาหารที่สั่ง" border="normal" maximizable="true" collapsible="true">
+				<panelchildren>
+
+					<vbox id="listmenu">
+					</vbox>
+
+				</panelchildren>
+			</panel>
+
+			
+			</hbox>
+			</panelchildren>
+			</panel>
+			
+			</hbox>
+			
+			</vbox>
+			
+        </hbox>
+		
+
+    </window>
+
+</zk>

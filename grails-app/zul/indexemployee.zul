@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" ?>
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul"
+    xmlns:h="http://www.w3.org/1999/xhtml"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+
+    <window>
+
+  		 <vbox>
+			 <separator width="20px"/>
+         	 <window apply="sabaybarbecue.IndexemployeeComposer" border="normal" width="500px"  id="window2">
+				<caption label="ระบบบริหารพนักงาน"/>
+				<tabbox width="750px">
+        <tabs id="tabPanel">
+		        <tab label="บันทึกข้อมูลพนักงาน" />
+				<tab id="this" label=" แสดงรายละเอียดพนักงานแต่ละคน" />
+				<tab label="เพิ่ม point ให้สมาชิก" />
+			
+        </tabs>
+        <tabpanels id="tabPanel1">
+			<tabpanel id="tabPanel2">
+			
+			
+			<vbox>
+			  <separator width = "20px"/>
+			<hbox> 
+				<separator width="15px"/>
+			 เลือกแผนกที่ต้องการ :
+			 	<separator width = "10px"/>
+			   <combobox id = "depart">
+				<comboitem label = "พนักงานเสริฟ"/>
+				<comboitem label = "พนักงานดูแลระบบ"/>
+				<comboitem label = "พนักงานส่งของ"/>
+				<comboitem label = "พนักงานดูแลคลังสินค้า"/>
+			  </combobox>
+			  </hbox>
+			  <separator width="20px"/>
+			  <hbox>
+			  	<separator width="15px"/>
+				ชื่อพนักงาน :
+				<separator width = "10"/>
+				<textbox id = "name" width = "200px"/>
+			  </hbox>
+			  <separator width = "20px"/>
+			  <hbox>
+			  	<separator width="15px"/>
+			  เพศ :
+			  <separator width = "25px"/>
+			  <radiogroup id ="sex">
+			  <radio id = "sex1" label="ชาย" />
+			  <radio id = "sex2" label="หญิง" />
+		          </radiogroup>
+			  </hbox>   
+			  <separator width="20px"/>
+			   			<hbox>
+			   				<separator width="15px"/>
+			            <label>กรอกรายละเอียดของงาน :</label>
+			        	</hbox>
+			        	<separator width="20px"/>
+			        	<hbox>
+			        	<separator width="15px"/>
+			            <textbox rows="5" cols="50" id = "detail1">
+						</textbox>
+
+						</hbox> <separator width="10px"/>
+								<hbox><separator width="15px"/>
+									สร้างบัญชีผู้ใช้ให้พนักงาน
+								</hbox>
+								<hbox>
+								<separator width="10px"/>
+					             <label>CreateUsername :</label>
+					             <separator width="10px"/>
+					             <textbox id = "username"/>
+					             </hbox>
+					             <hbox>
+								<separator width="10px"/>
+					             <label>CreatePassword :</label>
+					             <separator width="10px"/>
+					             <textbox id = "password"/>
+					             </hbox>
+					             
+					             <separator width="10px"/>
+		               	<hbox>
+		               	<separator width="15px"/>
+						<button id="btnSubmit">
+                    	บันทึกข้อมูล
+                		</button>
+						<button id="btnClear">
+                    	ล้างข้อมูล
+                		</button>
+						<separator width="190px"/>
+						<button id="logOut">
+                    	ออกจากระบบ
+                		</button>
+                		</hbox>
+
+			  
+			</vbox>
+		
+			</tabpanel>
+			
+			<tabpanel>
+					 <vbox>
+					 	<separator width ="10px"/>
+				 	 			รายละเอียดของพนักงานที่ได้ทำการบันทึกแล้ว
+				 	 	<separator width ="10px"/>
+				 	 
+					 <listbox id="showNameList" width="470px" height="350px">
+							<listhead>
+									<listheader label="Name" sort="auto" width="150px"/>
+									<listheader label="Gender" sort="auto" width="52px"/>
+									<listheader label="Department" sort="auto" width="140px"/>
+									<listheader label="Detail" sort="auto" width="128px"/>
+							</listhead>
+					</listbox>
+				<separator width="20px"/>
+					<hbox>
+						<separator width="5px"/>
+						<button id="del">ลบรายชื่อพนักงาน</button>
+						<separator width="10"/>
+						<combobox id ="lisde">
+
+						</combobox>
+					</hbox>
+					<label>สรุปจำนวนพนักงานทั้งหมดภายในร้าน</label>
+				<separator width="15px"/>
+				<groupbox>
+ 			 	
+ 			 	<vbox id ="add1">
+ 			 		<vbox id="add2">
+ 			 		</vbox>
+ 			 	</vbox>
+ 			 	
+				</groupbox>
+				<vbox>
+ 			 	<separator width="20"/>
+				<button id = "update">อัพเดทจำนวนพนักงาน</button>
+ 				</vbox>
+				<separator width="20px"/>
+					</vbox>
+			</tabpanel> 
+			<tabpanel>
+    		 
+     		 <vbox>
+				 <separator width ="10px"/>
+			 	 <hbox>เพิ่ม Point ให้สมาชิก : <space/><combobox id="boxuser"/></hbox>
+			 	 <separator width ="10px"/>
+			 	 </vbox>
+ 			 <vbox>
+ 			 <hbox>จำนวน: <space/><textbox id="point"/> แต้ม</hbox>
+			 <hbox>เหตุผล: <space/><textbox id="reason"/> </hbox>
+ 			 <hbox>
+ 			  <separator width="50px"/><button id = "btnSubmit1">ยืนยัน</button>
+ 			 </hbox>
+ 			 <separator width="15px"/>
+ 			 
+ 			 </vbox>
+ 			 
+			</tabpanel>
+        </tabpanels>
+    </tabbox>
+    <space />
+ 
+			 </window>
+		 </vbox>
+		 
+        <vbox id="scaffoldingBox"/>
+
+    </window>
+
+</zk>

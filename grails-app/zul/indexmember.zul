@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" ?>
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul"
+    xmlns:h="http://www.w3.org/1999/xhtml"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+	
+    <window apply="sabaybarbecue.IndexmemberComposer">
+	
+		<hbox align="center">
+            <image src="${z.resource(dir:'images', file:'logo.png')}"/>
+        </hbox>
+		
+		<hbox>
+		<panel height="20%" width="100%" title="Welcome To SabayBarbecue" border="rounded">
+			<panelchildren>
+				<vbox>
+					<separator/>
+					<hbox><space/><vbox><label value="Username:"/><textbox id="user"/></vbox></hbox>
+					<hbox><space/><vbox><label value="Password:"/><textbox id="pass" type="password"/></vbox></hbox>
+					<hbox><space/><button id="login" label="Login"/></hbox>
+					<separator/>
+				</vbox>
+			</panelchildren>
+		</panel>
+		<panel height="20%" width="200%" title="Register To Sabay Barbecue" border="rounded">
+			<panelchildren>
+				<vbox>
+					<separator/>
+						<hbox><space/>ไอดี:<space/><textbox id="inID" width="100%"/><separator/></hbox>
+						<hbox><space/>รหัสผ่าน:<space/><textbox id="inPassword" type="password" width="100%"/><separator/></hbox>
+						<hbox><space/>ยืนยันรหัสผ่าน:<space/><textbox id="inPasswordc" type="password" width="100%"/><separator/></hbox>
+						<hbox><space/>ชื่อ:<space/><textbox id="inName" width="100%"/><separator/></hbox>
+						<hbox><space/>นามสกุล:<space/><textbox id="inLastname" width="100%"/><separator/></hbox>
+						<hbox><space/>รหัสบัตรประชาชน:<space/><textbox id="inIdentify" width="100%"/><separator/></hbox>
+						<hbox><space/>ที่อยู่:<space/><textbox id="inAddress" width="300%"/><separator/></hbox>
+						<hbox><space/>อำเภอ:<space/><textbox id="inAmphoe" width="100%"/><separator/></hbox>
+						<hbox><space/>จังหวัด:<space/><textbox id="inProvince" width="100%"/><separator/></hbox>
+						<hbox><space/>รหัสไปรษณีย์:<space/><textbox id="inZipCode" width="80%"/><separator/></hbox>
+						<hbox><space/>Email:<space/><textbox id="inEmail" width="150%"/><separator/></hbox>
+						<hbox><space/>เบอร์โทรศัพท์:<space/><textbox id="inPhone" width="100%"/><separator/></hbox>
+						<hbox><space/><button id="confirm" label="สมัคร"/></hbox>
+					<separator/>
+				</vbox>
+			</panelchildren>
+		</panel>
+		<separator width ="300px"/>
+		<panel height="490px" width="300px" title="Menu" border="rounded">
+			<panelchildren>
+				<vbox>
+					<separator/>
+						<a href="index.zul"><image src="${z.resource(dir:'images', file:'home.png')}"/></a>
+					<separator/>
+						<a href="orderfood.zul"><image src="${z.resource(dir:'images', file:'fos.png')}"/></a>
+					<separator/>
+						<a href="indexpromotion.zul"><image src="${z.resource(dir:'images', file:'pros.png')}"/></a>
+					
+						<a href="indextable.zul"><image src="${z.resource(dir:'images', file:'rts.png')}"/></a>
+					
+						<a href="login.zul"><image src="${z.resource(dir:'images', file:'ems.png')}"/></a>
+					<separator/>
+						<a href="login.zul"><image src="${z.resource(dir:'images', file:'ws.png')}"/></a>
+					<separator/>
+				</vbox>
+			</panelchildren>
+		</panel>
+		
+		</hbox>
+    </window>
+
+</zk>
